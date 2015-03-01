@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cp $1 temp.tex
+
+platex temp.tex && \
+dvipdfmx temp.dvi && \
+mv temp.pdf Result_compiled.pdf && \
+open -a Preview.app Result_compiled.pdf
+
+rm temp.*
