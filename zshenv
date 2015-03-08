@@ -13,3 +13,4 @@ export work=/Users/hijiri/OneDrive/Documents/
 export home=/Users/hijiri/
 
 export NVM_DIR=~/.nvm
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters

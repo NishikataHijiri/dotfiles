@@ -34,6 +34,16 @@ setopt hist_ignore_all_dups
 
 zstyle ':completion:*:default' menu select=1
 
+# This config link online help
+unalias run-help
+autoload run-help
+HELPDIR=/usr/local/share/zsh/help
+
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# My Zshell design
 autoload colors
 colors
 PROMPT="%{${fg[blue]}%}%m: %n%(!.#.%% )%{${reset_color}%}"
