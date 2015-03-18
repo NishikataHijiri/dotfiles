@@ -15,6 +15,8 @@ alias lx='ll -a'
 
 alias _clearcaches='sudo purge'
 alias python='python3'
+alias htop='sudo htop'
+
 
 # Last Modified: 2015-01-07T20:47:53
 # .zshrc config
