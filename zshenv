@@ -10,6 +10,9 @@ export PATH=$PATH:/Users/hijiri/.nodebrew/current/bin
 
 export desk=/Users/hijiri/Documents/workspace/ 
 export work=/Users/hijiri/Public/OneDrive
+export share=/Users/hijiri/Public/Juno/
+export share_duho=/Users/hijiri/Public/Duho/
+
 export home=/Users/hijiri/
 export root=/private/var/root/
 
