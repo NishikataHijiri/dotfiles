@@ -1,5 +1,4 @@
 # Maintainer: hijiri
-# Last Modified: 2015-01-07T20:37:21
 
 alias od='od -txlz -Ax -v'
 alias grep='grep -E --color=auto'
@@ -18,8 +17,6 @@ alias python='python3'
 alias htop='sudo htop'
 
 
-# Last Modified: 2015-01-07T20:47:53
-# .zshrc config
 bindkey -e
 
 autoload -U compinit promptinit
@@ -35,6 +32,7 @@ setopt extended_glob
 setopt hist_ignore_all_dups
 
 zstyle ':completion:*:default' menu select=1
+
 
 # This config link online help
 unalias run-help

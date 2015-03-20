@@ -1,5 +1,4 @@
 # Maintainer: hijiri
-# Last Modified: 2015-01-07T20:45:12
 
 export GREP_COLOR='1;37;41'
 
@@ -10,7 +9,7 @@ export PATH=$PATH:/Users/hijiri/.nodebrew/current/bin
 
 export desk=/Users/hijiri/Documents/workspace/ 
 export work=/Users/hijiri/Public/OneDrive
-export share=/Users/hijiri/Public/Juno/
+export share_juno=/Users/hijiri/Public/Juno/
 export share_duho=/Users/hijiri/Public/Duho/
 
 export home=/Users/hijiri/
