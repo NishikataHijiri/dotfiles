@@ -28,7 +28,7 @@ alias ....='cd ../../../'
 
 setopt auto_pushd
 setopt pushd_ignore_dups
-setopt extended_glob
+#setopt extended_glob
 setopt hist_ignore_all_dups
 
 zstyle ':completion:*:default' menu select=1
