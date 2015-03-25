@@ -12,7 +12,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lx='ll -a'
 
-alias _clearcaches='sudo purge'
+alias _cleanup='sudo purge'
 alias python='python3'
 alias htop='sudo htop'
 
