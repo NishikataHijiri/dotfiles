@@ -31,8 +31,20 @@ setopt pushd_ignore_dups
 #setopt extended_glob
 setopt hist_ignore_all_dups
 
-zstyle ':completion:*:default' menu select=1
 
+# Complement setting
+autoload -U compinit promptinit
+compinit
+zstyle ':completion:*:default' menu select=1
+zstyle ':completion::complete:*' use-cache true
+
+autoload colors
+zstyle ':completion:*' list-colors "${LS_COLORS}"
+
+zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin
+
+autoload zed
+autoload -U zcalc
 
 # This config link online help
 unalias run-help
