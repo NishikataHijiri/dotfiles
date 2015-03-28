@@ -18,3 +18,6 @@ export root=/private/var/root/
 export NVM_DIR=~/.nvm
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 export apacheconfig=/usr/local/etc/apache2/2.4/extra/
+
+# OpenSSH
+export SSH_AUTH_SOCK=$(launchctl getenv SSH_AUTH_SOCK)
