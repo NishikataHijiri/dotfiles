@@ -96,9 +96,13 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'tpope/vim-fugitive'
 
+
+" Completion packages
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
+
+let g:neosnippet#enable_snipmate_compatibility = 1
 
 
 " Ruby and Rails settings
