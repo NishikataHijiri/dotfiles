@@ -32,34 +32,6 @@ setopt pushd_ignore_dups
 setopt hist_ignore_all_dups
 
 
-# Complement setting
-autoload -U compinit promptinit
-compinit
-zstyle ':completion:*:default' menu select=1
-zstyle ':completion::complete:*' use-cache true
-
-autoload colors
-zstyle ':completion:*' list-colors "${LS_COLORS}"
-
-zstyle ':completion:*:sudo:*' command-path \
-   /usr/local/sbin /usr/local/bin \
-   /usr/sbin /usr/bin /sbin /bin  \
-
-autoload zed
-autoload -U zcalc
-
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
-
-LISTMAX=1000
-WORDCHARS="$WORDCHARS|:"
-
 # This config link online help
 unalias run-help
 autoload run-help
@@ -96,4 +68,8 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'j' vi-down-line-or-history
+
+# ENCODING
+[ -f ~/.zsh.d/zshrc.encoding ] && source ~/.zsh.d/zshrc.encoding
+[ -f ~/.zsh.d/zshrc.completion ] && source ~/.zsh.d/zshrc.completion
 
