@@ -1,9 +1,8 @@
 " Maintainer:   Nishikata Hijiri
-" Last Modified: 2015-02-17T14:26:13
 
 """ Release autogroup in MyAutoCmd
 augroup MyAutoCmd
-    autocmd!
+   autocmd!
 augroup END
  
 " ----------------------------------------------- "
@@ -16,48 +15,48 @@ let s:bundle_root = expand('~/.vim/bundle')
 let s:neobundle_root = s:bundle_root . '/neobundle.vim'
 
 if has('vim_starting')
-    execute "set runtimepath+=" . s:neobundle_root
+   execute "set runtimepath+=" . s:neobundle_root
 endif
+
 call neobundle#begin(s:bundle_root)
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-
 NeoBundleLazy 'Shougo/neocomplete.vim', {
-            \ "autoload": {"insert": 1}}
+   \ "autoload": {"insert": 1}}
 
 let g:neocomplete#enable_at_startup = 1
 let s:hooks = neobundle#get_hooks("neocomplete.vim")
 
 
 function! s:hooks.on_source(bundle)
-    let g:acp_enableAtStartup = 0
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-    let g:neocomplete#sources#dictionary#dictionaries = {
+   let g:acp_enableAtStartup = 0
+   let g:neocomplete#enable_smart_case = 1
+   let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+   let g:neocomplete#sources#dictionary#dictionaries = {
                 \ 'default': '',
                 \ 'vimshell': $HOME.'/.vimshell_hist',
                 \ 'scheme'  : $HOME.'/.gosh_completions'
                 \}
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+   if !exists('g:neocomplete#keyword_patterns')
+      let g:neocomplete#keyword_patterns = {}
+   endif
+   let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-    let g:clang_user_options = '-std=c++11'
-    let g:clang_complete_auto = 0
-    let g:clang_auto_select = 0
-    let g:clang_use_library = 0
+   let g:clang_user_options = '-std=c++11'
+   let g:clang_complete_auto = 0
+   let g:clang_auto_select = 0
+   let g:clang_use_library = 0
 
-    if !exists('g:neocomplete#force_omni_input_patterns')
-        let g:neocomplete#force_omni_input_patterns = {}
-    endif
+   if !exists('g:neocomplete#force_omni_input_patterns')
+      let g:neocomplete#force_omni_input_patterns = {}
+   endif
 
-    let g:neocomplete#force_overwrite_completefunc = 1
-    let g:neocomplete#force_omni_input_patterns.cpp = 
+   let g:neocomplete#force_overwrite_completefunc = 1
+   let g:neocomplete#force_omni_input_patterns.cpp = 
                                     \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
     
-    "NeoCompleteEnable
+   "NeoCompleteEnable
 endfunction
 
 
