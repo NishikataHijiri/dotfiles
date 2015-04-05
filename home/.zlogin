@@ -1,4 +1,4 @@
 # Author:   Nishikata Hijiri
 #
+rm -f ~/.zsh_history
 
-eval $(ssh-agent -k)
