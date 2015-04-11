@@ -53,8 +53,7 @@ function! s:hooks.on_source(bundle)
    endif
 
    let g:neocomplete#force_overwrite_completefunc = 1
-   let g:neocomplete#force_omni_input_patterns.cpp = 
-                                    \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+   let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
     
    "NeoCompleteEnable
 endfunction

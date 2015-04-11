@@ -2,7 +2,8 @@
 
 set runtimepath+=~/.vim/
 
-runtime! custom/*.vim
-runtime! indent/*.vim
+"runtime! custom/*.vim
+"runtime! indent/*.vim
+runtime! training/*.vim
 
 "### END VIMRC ###
