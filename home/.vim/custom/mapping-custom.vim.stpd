@@ -1,0 +1,43 @@
+" Maintainer:  Nishikata Hijiri 
+
+
+""" Unite.vim """
+nnoremap [unite] <Nop>
+nmap <Leader>f [unite]
+
+nnoremap [unite]u :<C-u>Unite -no-split<Space>
+nnoremap <silent> [unite]f :<C-u>Unite<Space>buffer<CR>
+nnoremap <silent> [unite]b :<C-u>Unite<Space>bookmark<CR>
+nnoremap <silent> [unite]m :<C-u>Unite<Space>file_mru<CR>
+nnoremap <silent> [unite]r :<C-u>UniteWithBufferDir<Space>file<CR>
+nnoremap <silent> ,vr :<C-u>UniteResume<CR>
+
+let g:vinarise_enable_auto_detect = 1
+
+nnoremap <silent> ,vb  :<C-u>Unite<Space>build<CR>
+nnoremap <silent> ,vcb :<C-u>Unite<Space>build:!<CR> 
+nnoremap <silent> ,vch :<C-u>UniteBuildClearHighlight<CR>
+ 
+""" Neo Completion """
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>" 
+inoremap <expr><C-y> neocomplete#close_popup()
+inoremap <expr><C-e> neocomplete#cancel_popup()
+
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+""" QuickRun  """
+nmap <Leader>r <Plug>(quickrun)
+noremap <Leader>w <C-w><C-w>
+
+""" vimshell """
+nmap <silent> vs :<C-u>VimShell<CR>
+nmap <silent> vp :<C-u>VimShellPop<CR>
+
+
+""" END mapping-custom.vim.stpd """ 

@@ -1,9 +1,10 @@
-" Maintainer:   Nishikata Hijiri
+" Maintainer:     Nishikata Hijiri
+" Last Modified:  August/12/2015 Wed
 
 set runtimepath+=~/.vim/
 
-"runtime! custom/*.vim
-"runtime! indent/*.vim
-runtime! training/*.vim
+runtime! custom/*.vim
+runtime! indent/*.vim
 
-"### END VIMRC ###
+
+""" END VIMRC """

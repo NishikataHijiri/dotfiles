@@ -7,24 +7,33 @@ alias cp='cp -iv'
 alias rm='rm -iv'
 alias mv='mv -iv'
 
+alias l='ll -aF'
 alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -a'
 alias lx='ll -a'
+alias lc='ll -c'
+ 
+alias ...='cd ../../'
+alias ....='cd ../../../'
+ 
 
-alias _cleanup='sudo purge'
+alias vi='vim -u NONE'
 alias python='python3'
+alias g++='g++ --std=c++14'
+alias llvm-g++='llvm-g++ --std=c++14'
+alias clang++='clang++ --std=c++1y --stdlib=libc++'
+
 alias htop='sudo htop'
+alias _cleanup='sudo purge'
 
 
+
+# zsh editor config
 bindkey -e
-
 autoload -U compinit promptinit
 
 setopt auto_cd
-
-alias ...='cd ../../'
-alias ....='cd ../../../'
 
 setopt auto_pushd
 setopt pushd_ignore_dups
@@ -69,7 +78,10 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'j' vi-down-line-or-history
 
-# ENCODING
+# Loading my settings
+[ -f ~/.zsh.d/zshrc.mac ] && source ~/.zsh.d/zshrc.mac
 [ -f ~/.zsh.d/zshrc.encoding ] && source ~/.zsh.d/zshrc.encoding
 [ -f ~/.zsh.d/zshrc.completion ] && source ~/.zsh.d/zshrc.completion
 
+# Load kvm
+[ -s "/Users/hijiri/.k/kvm/kvm.sh" ] && . "/Users/hijiri/.k/kvm/kvm.sh" 

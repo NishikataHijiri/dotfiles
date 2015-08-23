@@ -1,12 +1,10 @@
 // Author: hijiri
 // Last Modified: <+DATE+>
 
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
 
 int main(int argc, char* argv[])
 {
-    cout << "hello world !" << endl;
+    printf("hello world\n");
     return 0;
 }
