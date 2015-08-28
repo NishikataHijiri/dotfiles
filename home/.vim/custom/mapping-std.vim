@@ -1,11 +1,5 @@
 " Maintainer:  Nishikata Hijiri
 
-""" My vim faster editation cmd """
-nnoremap <F5> :<C-u>tabedit $MYVIMRC<CR>
-            \ :source $MYVIMRC<CR>
-
-cmap w!! w !sudo tee > /dev/null %
-
 """ Manage plural fils """
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [b :bprevious<CR>
@@ -25,4 +19,9 @@ imap <C-a> <Esc>0i
 imap <C-e> <Esc>$i<Right>
 imap <C-v> <Esc>p
 
+
+""" My vim faster editation cmd """
+cmap w!! w !sudo tee > /dev/null %
+nnoremap <F5> :<C-u>tabedit $MYVIMRC<CR> :source $MYVIMRC<CR>
+ 
 """ END mapping.vim """
