@@ -1,22 +1,27 @@
 " Maintainer: alicengh
-
+" Last Modified: 2015-08-31T20:44:24
 
 " NOTE: Skip initialization for vim-tiny or vim-small
 if 0 | endif
 
 " NOTE: Neo-vim setting
+" let s:noplugin = 0
+let s:bundle_root = expand('~/.vim/bundle')
+let s:neobundle_root = s:bundle_root . '/neobundle.vim'
+ 
 if has('vim_starting')
-  if &compatible
-    " Be iMproved
-    set nocompatible
-  endif
+    if &compatible
+        " Be iMproved
+        set nocompatible
+    endif
 
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+    " Required:
+    " set runtimepath+=~/.vim/bundle/neobundle.vim/
+    execute "set runtimepath+=" . s:neobundle_root 
 endif
 
 " Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(s:bundle_root)
 
 " Let NeoBundle manage NeoBundle
 " Required:
@@ -26,6 +31,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tyru/caw.vim.git'
 NeoBundle 'Townk/vim-autoclose'
+
 
 NeoBundle 'Shougo/neomru.vim', {
             \ 'depends' : 'Shougo/unite.vim'
@@ -40,7 +46,6 @@ NeoBundle 'Shougo/vimproc', {
 """ NeoCompletion """
 if has('lua')
     NeoBundle 'Shougo/neco-syntax'
-    NeoBundle 'Shougo/neoinclude.vim'
     NeoBundle 'Shougo/neosnippet-snippets'
    
     NeoBundleLazy 'Shougo/neocomplete.vim', {
@@ -80,6 +85,74 @@ NeoBundleLazy 'tpope/vim-endwise', {
             \ 'autoload' : { 'insert' : 1, }
             \ }
 
+" QuickRun plug-in
+NeoBundleLazy "thinca/vim-quickrun", {
+            \ "autoload": {
+            \   "mappings": ['nxo', '<Plug>(quickrun)'],
+            \}}
+
+
+" web development env
+NeoBundleLazy 'mattn/emmet-vim', {
+            \ 'autoload' : {
+            \   'filetypes' : 
+            \       ['html', 'html5', 'eruby', 'jsp', 'xml', 'css', 'scss', 'coffee'],
+            \   'commands' : ['<Plug>ZenCodingExpandNormal']
+            \ }}
+
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'open-browser.vim'
+NeoBundle 'mattn/webapi-vim'
+NeoBundle 'tell-k/vim-browsereload-mac'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'tyru/caw.vim.git'
+" NeoBundle 'vim-scripts/dbext.vim'
+
+NeoBundle "thinca/vim-template"
+
+NeoBundleLazy "sjl/gundo.vim", {
+            \ "autoload": {
+            \   "commands": ['GundoToggle'],
+            \}}
+
+NeoBundleLazy "vim-scripts/TaskList.vim", {
+            \ "autoload": {
+            \   "mapoings": ['<Plug>TaskList'],
+            \}}
+
+NeoBundle 'marijnh/tern_for_vim', {
+    \ 'build': {
+    \   'others': 'npm install'
+    \}}
+
+" Ruby and Rails settings
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'ruby-matchit'
+
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'tomtom/tcomment_vim'
+
+NeoBundleLazy "lambdalisue/vim-django-support", {
+            \ "autoload": {
+            \   "filetype": ["python", "python3", "djangohtml"]
+            \ }}
+
+NeoBundleLazy 'davidhalter/jedi-vim', {
+            \ "autoload": {
+            \   "filetype": ["python", "python3", "djangohtml"],
+            \ }, 
+            \ "build": {
+            \   "mac": "pip install jedi",
+            \   "unix": "pip install jedi",
+            \ }}
+ 
 call neobundle#end()
 
 " Required:

@@ -1,5 +1,5 @@
 " Maintainer:   alicengh
-
+" Last Modified: 2015-08-31T20:46:19
 
 """ Unite.vim """
 nnoremap [unite] <Nop>
@@ -16,7 +16,7 @@ nnoremap <silent> ,vr :<C-u>UniteResume<CR>
 nnoremap <silent> ,vb  :<C-u>Unite<Space>build<CR>
 nnoremap <silent> ,vcb :<C-u>Unite<Space>build:!<CR> 
 nnoremap <silent> ,vch :<C-u>UniteBuildClearHighlight<CR>
-""" END Unite.vim """
+""" END unite.vim """
 
 
  
@@ -59,8 +59,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 
 """ QuickRun  """
-" nmap <Leader>r <Plug>(quickrun)
-" noremap <Leader>w <C-w><C-w>
+nmap <Leader>r <Plug>(quickrun)
+noremap <Leader>w <C-w><C-w>
 """ END QuickRun """
 
 
@@ -77,3 +77,9 @@ nmap <silent> vp :<C-u>VimShellPop<CR>
 nmap <Leader>c <Plug>(caw:i:toggle)
 vmap <Leader>c <Plug>(caw:i:toggle) 
 """ END caw.vim """
+
+
+
+""" TaskLists """
+nmap <Leader>T <Plug>TaskList
+""" END: TaskLists """
