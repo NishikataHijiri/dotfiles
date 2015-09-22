@@ -1,9 +1,10 @@
-" Maintainer:   alicengh
+" License: MIT
+" Maintainer: alicengh
 
 set runtimepath+=~/.vim/
 
 runtime! indent/*.vim
-runtime! custom/basic/*.vim
+runtime! custom/stdvim/*.vim
 
 if isdirectory(expand('~/.vim/bundle/neobundle.vim'))
   runtime! custom/neobundle/*.vim

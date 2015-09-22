@@ -26,6 +26,7 @@ clang_complete-library_path	clang_complete.txt	/*clang_complete-library_path*
 clang_complete-license	clang_complete.txt	/*clang_complete-license*
 clang_complete-loaded	clang_complete.txt	/*clang_complete-loaded*
 clang_complete-make_default_keymappings	clang_complete.txt	/*clang_complete-make_default_keymappings*
+clang_complete-omnicppcomplete_compliance	clang_complete.txt	/*clang_complete-omnicppcomplete_compliance*
 clang_complete-optional_args_in_snippets	clang_complete.txt	/*clang_complete-optional_args_in_snippets*
 clang_complete-options	clang_complete.txt	/*clang_complete-options*
 clang_complete-periodic_quickfix	clang_complete.txt	/*clang_complete-periodic_quickfix*
@@ -53,6 +54,7 @@ g:clang_jumpto_declaration_in_preview_key	clang_complete.txt	/*g:clang_jumpto_de
 g:clang_jumpto_declaration_key	clang_complete.txt	/*g:clang_jumpto_declaration_key*
 g:clang_library_path	clang_complete.txt	/*g:clang_library_path*
 g:clang_make_default_keymappings	clang_complete.txt	/*g:clang_make_default_keymappings*
+g:clang_omnicppcomplete_compliance	clang_complete.txt	/*g:clang_omnicppcomplete_compliance*
 g:clang_periodic_quickfix	clang_complete.txt	/*g:clang_periodic_quickfix*
 g:clang_restore_cr_imap	clang_complete.txt	/*g:clang_restore_cr_imap*
 g:clang_snippets	clang_complete.txt	/*g:clang_snippets*

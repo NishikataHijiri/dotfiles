@@ -19,10 +19,10 @@ set nocompatible
 set backspace=indent,eol,start
 
 set nobackup
-set history=200		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set incsearch   " do incremental searching
+set ruler		" show the cursor position all the time
+set history=200 " keep 50 lines of command line history
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
