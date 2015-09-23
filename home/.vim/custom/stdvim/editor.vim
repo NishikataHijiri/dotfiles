@@ -1,6 +1,7 @@
 " License: MIT 
 " Maintainer: alicengh
 
+""" Color setting """
 syntax on
 set t_Co=256
 colorscheme pablo
@@ -20,6 +21,9 @@ set number
 set title
 set textwidth=0
 set background=dark
+set cursorline
+hi clear CursorLine
+hi CursorLineNr term=bold cterm=NONE ctermfg=120 ctermbg=NONE
 
 
 """ Programming support """
@@ -48,7 +52,7 @@ set showmatch
 """ Others """
 set complete+=k
 set display=lastline
-set clipboard=unnamed
+set clipboard=unnamed,autoselect
 
 set wildmenu
 set wildmode=list:full
@@ -83,6 +87,7 @@ nnoremap <silent> tc :tabclose<CR>
 imap <C-a> <Esc>0i
 imap <C-e> <Esc>$i<Right>
 imap <C-v> <Esc>p
+inoremap <silent> qq <ESC>
 
 
 
@@ -90,4 +95,4 @@ imap <C-v> <Esc>p
 cmap w!! w !sudo tee > /dev/null %
 nnoremap <F5> :<C-u>tabedit $MYVIMRC<CR> :source $MYVIMRC<CR>
  
-""" END mapping.vim """
+""" END: mapping.vim """

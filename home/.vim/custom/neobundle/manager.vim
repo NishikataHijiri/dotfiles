@@ -1,4 +1,4 @@
-" License: MIT License
+" License: MIT
 " Maintainer: alicengh
 
 
@@ -6,6 +6,7 @@
 augroup CustomAutoCmd
    autocmd!
 augroup END
+
 
 " NOTE: Skip initialization for vim-tiny or vim-small
 if 0 | endif
@@ -55,7 +56,7 @@ NeoBundle 'Shougo/vimproc', {
             \ }}
 
 """ NeoCompletion """
-if has('lua')
+if has('lua') 
     NeoBundle 'Shougo/neco-syntax'
     NeoBundle 'Shougo/neosnippet-snippets'
    
@@ -181,13 +182,6 @@ NeoBundleCheck
 
 
 
-
-" let s:noplugin = 0
-let s:bundle_root = expand('~/.vim/bundle')
-let s:neobundle_root = s:bundle_root . '/neobundle.vim'
-execute "set runtimepath+=" . s:neobundle_root 
-
-
 """ NeoCompletion """
 " Basic config.
 let s:hooks = neobundle#get_hooks("neocomplete.vim")
@@ -245,8 +239,11 @@ endif
 
 " Enable snipMate compatibility feature.
 let g:neosnippet#enable_snipmate_compatibility = 1
+" This setting for Default snippets makes disabled 
+" let g:neosnippet#disable_runtime_snippets = {'_' : 1}
+
+let g:neosnippet#snippets_directory = []
 " Tell Neosnippet about the other snippets
-" let g:neosnippet#snippets_directory = '~/.vim/bundle/vim-snippets/snippets'
 """ END: NeoCompletion """
 
 
@@ -358,7 +355,9 @@ function! s:hooks.on_source(bundle)
     autocmd CustomAutoCmd FileType python let b:did_ftplugin = 1
 endfunction
 
-autocmd CustomAutoCmd FileType python setlocal completeopt-=preview
+if ! empty(neobundle#get("neocomplete.vim"))
+  autocmd CustomAutoCmd FileType python setlocal completeopt-=preview
+endif
 """ END: jedi-vim: python support """ 
 
 
