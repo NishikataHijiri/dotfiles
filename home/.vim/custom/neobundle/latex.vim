@@ -1,7 +1,7 @@
-" Maintainer:  Nishikata Hijiri
-" Last Modified: 2015-02-17T14:36:45 
+" License: MIT License
+" Maintainer: alicengh 
 
-"filetype plugin on
+filetype plugin on
 
 let tex_flavor='latex'
 set grepprg=grep\ -nH\ $*
