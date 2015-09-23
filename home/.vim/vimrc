@@ -10,4 +10,6 @@ if isdirectory(expand('~/.vim/bundle/neobundle.vim'))
   runtime! custom/neobundle/*.vim
 endif
 
+" runtime! tiny/*.vim
+
 """ END VIMRC """
