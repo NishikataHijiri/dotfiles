@@ -1,7 +1,7 @@
 " License: MIT License
 " Maintainer: alicengh 
 
-filetype plugin on
+" filetype plugin on
 
 let tex_flavor='latex'
 set grepprg=grep\ -nH\ $*

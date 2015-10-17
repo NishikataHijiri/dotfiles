@@ -12,7 +12,7 @@ set shiftround
 set infercase
 set hidden
 set switchbuf=useopen
-set virtualedit=block
+set virtualedit=all
 
 
 """ Document support """

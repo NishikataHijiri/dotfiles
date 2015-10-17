@@ -163,19 +163,15 @@ NeoBundleLazy 'davidhalter/jedi-vim', {
             \   "unix": "pip install jedi",
             \ }}
 
-" clang-support
-NeoBundle 'justmao945/vim-clang'
-NeoBundle 'Rip-Rip/clang_complete'
-NeoBundle 'kana/vim-operator-user'
-NeoBundle 'rhysd/vim-clang-format'
+" Clang-support 
+" NeoBundle 'justmao945/vim-clang'
+" NeoBundle 'Rip-Rip/clang_complete'
+" NeoBundle 'kana/vim-operator-user'
+" NeoBundle 'rhysd/vim-clang-format'
  
 call neobundle#end()
 
-" Required:
-filetype indent on
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
+" Require" If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 """ END neobundle.vim """
@@ -298,7 +294,7 @@ function! s:hooks.on_source(bundle)
                 \ 'outputter' : 'error',
                 \ 'outputter/error/success' : 'buffer',
                 \ 'outputter/error/error'   : 'quickfix',
-                \ 'outputter/buffer/split'  : ':botright 5sp',
+                \ 'outputter/buffer/split'  : ':botright 10sp',
                 \ 'outputter/buffer/close_on_empty' : 1,
                 \}
 
@@ -362,57 +358,57 @@ endif
 
 
 
-"" Clang Completion Tools """
-"" clang_complete """
-" disable auto completion for vim-clang
-let g:clang_auto = 0
-
-" let g:clang_debug = 5
-" default 'longest' can not work with neocomplete
-let g:clang_c_completeopt   = 'menuone,preview'
-let g:clang_cpp_completeopt = 'menuone,preview'
-
-" For c and c++ completion options
-let g:clang_c_options   = '-std=c11'
-let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
-
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-
-let g:neocomplete#force_omni_input_patterns.c   = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*' 
-
-let g:clang_use_path = 1
-let g:clang_include_sysheaders = 1  
-""" END: clang_complete """  
-
-""" clang-format """
-let g:clang_format#style_options = {
-            \ "AccessModifierOffset" : -4,
-            \ "AllowShortIfStatementsOnASingleLine" : "true",
-            \ "AlwaysBreakTemplateDeclarations" : "true",
-            \ "Standard" : "C++11"
-            \ }
-""" END: clang-format """ 
-
-""" clang_complete """
-let g:clang_auto_select     = 0
-let g:clang_complete_auto   = 0
-let g:clang_use_library     = 1
-
-let g:clang_complete_copen    = 1
-let g:clang_periodic_quickfix = 1
-
-let g:clang_user_options = '-std=c++1z -stdlib=libc++'
-
-
-" if has('mac')
-"     let g:clang_library_path = "/usr/lib/"
+" " """ Clang Completion Tools """
+" """ clang_complete """
+" " disable auto completion for vim-clang
+" let g:clang_auto = 0
+"
+" " let g:clang_debug = 5
+" " default 'longest' can not work with neocomplete
+" let g:clang_c_completeopt   = 'menuone,preview'
+" let g:clang_cpp_completeopt = 'menuone,preview'
+"
+" " For c and c++ completion options
+" let g:clang_c_options   = '-std=c11'
+" let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
+"
+"
+" if !exists('g:neocomplete#force_omni_input_patterns')
+"   let g:neocomplete#force_omni_input_patterns = {}
 " endif
-""" END: clang_complete """
-""" END: Clang Completion Tools """
+"
+" let g:neocomplete#force_omni_input_patterns.c   = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+" let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*' 
+"
+" let g:clang_use_path = 1
+" let g:clang_include_sysheaders = 1  
+" """ END: clang_complete """  
+
+" """ clang-format """
+" let g:clang_format#style_options = {
+"             \ "AccessModifierOffset" : -4,
+"             \ "AllowShortIfStatementsOnASingleLine" : "true",
+"             \ "AlwaysBreakTemplateDeclarations" : "true",
+"             \ "Standard" : "C++11"
+"             \ }
+" """ END: clang-format """ 
+"
+" """ clang_complete """
+" let g:clang_auto_select     = 0
+" let g:clang_complete_auto   = 0
+" let g:clang_use_library     = 1
+"
+" let g:clang_complete_copen    = 1
+" let g:clang_periodic_quickfix = 1
+"
+" let g:clang_user_options = '-std=c++1z -stdlib=libc++'
+"
+"
+if has('mac')
+    let g:clang_library_path = "/usr/lib/"
+endif
+" """ END: clang_complete """
+" """ END: Clang Completion Tools """
 
 
 """ END: NeoBundle configuration """
@@ -514,17 +510,17 @@ nmap <Leader>T <Plug>TaskList
 
 
 
-""" Clang Completion """
-map <silent> <Leader>q <Esc>:ClangCloseWindow<CR> 
-
-" map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR> 
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-
-" if you install vim-operator-user
-autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
-
-" Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
-
-""" END: Clang Completion """ 
+" """ Clang Completion """
+" map <silent> <Leader>q <Esc>:ClangCloseWindow<CR> 
+"
+" " map to <Leader>cf in C++ code
+" autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR> 
+" autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+"
+" " if you install vim-operator-user
+" autocmd FileType c,cpp,objc map <buffer><Leader>x <Plug>(operator-clang-format)
+"
+" " Toggle auto formatting:
+" nmap <Leader>C :ClangFormatAutoToggle<CR>
+"
+" """ END: Clang Completion """ 
