@@ -1,5 +1,7 @@
-" License: MIT
-" Maintainer: alicengh
+"""
+"   License: MIT
+"   Maintainer: alice
+"""
 
 filetype off
 filetype plugin indent off
@@ -9,9 +11,9 @@ set runtimepath+=~/.vim/,~/.vim/after
 runtime! indent/*.vim
 runtime! custom/stdvim/*.vim
 
-" if isdirectory(expand('~/.vim/bundle/neobundle.vim'))
-"   runtime! custom/neobundle/*.vim
-" endif
+if isdirectory(expand('~/.vim/bundle/neobundle.vim'))
+  runtime! custom/neobundle/*.vim
+endif
 
 filetype indent on
 filetype plugin indent on

@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/hijiri/.homesick/repos/dotfiles/home/.vim/training'
 let g:netrw_dirhist_2='/Users/hijiri/.homesick/repos/dotfiles/.git'
 let g:netrw_dirhist_3='/Users/hijiri/.homesick/repos/dotfiles/home/.vim/latex'
 let g:netrw_dirhist_4='/Users/hijiri/.homesick/repos/dotfiles/home/.vim/vim-latex'
+let g:netrw_dirhist_5='/Users/hijiri/Public/OneDrive/workstation/development/Studying/Procon/StoneGardenKit/include'
+let g:netrw_dirhist_6='/Users/hijiri/Public/OneDrive/workstation/development/Studying/Procon/StoneGardenKit/include/landscape'
