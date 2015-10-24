@@ -37,7 +37,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tyru/caw.vim.git'
-NeoBundle 'Townk/vim-autoclose'
+" NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'itchyny/lightline.vim'
 
@@ -58,19 +58,19 @@ NeoBundle 'Shougo/vimproc', {
 """ NeoCompletion """
 if has('lua') 
     NeoBundle 'Shougo/neco-syntax'
-    NeoBundle 'Shougo/neosnippet-snippets'
+    " NeoBundle 'Shougo/neosnippet-snippets'
    
     NeoBundleLazy 'Shougo/neocomplete.vim', {
                 \ 'depends' : 'Shougo/vimproc',
                 \ 'autoload' : { 'insert' : 1, }
                 \ }
 
-    NeoBundleLazy 'Shougo/neosnippet', {
-                \ 'depends' : 'Shougo/neosnippet-snippets',
-                \ 'autoload' : {
-                \   'insert' : 1,
-                \   'filetype' : 'snippet',
-                \ }}
+    " NeoBundleLazy 'Shougo/neosnippet', {
+    "             \ 'depends' : 'Shougo/neosnippet-snippets',
+    "             \ 'autoload' : {
+    "             \   'insert' : 1,
+    "             \   'filetype' : 'snippet',
+    "             \ }}
 endif
 """ END: NeoCompletion """ 
 
@@ -234,11 +234,11 @@ if has('conceal')
 endif
 
 " Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
+" let g:neosnippet#enable_snipmate_compatibility = 1
 " This setting for Default snippets makes disabled 
 " let g:neosnippet#disable_runtime_snippets = {'_' : 1}
 
-let g:neosnippet#snippets_directory = []
+" let g:neosnippet#snippets_directory = []
 " Tell Neosnippet about the other snippets
 """ END: NeoCompletion """
 
@@ -458,16 +458,16 @@ inoremap <expr><C-e> neocomplete#cancel_popup()
 inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " Neosnippets config
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ? 
-            \ "\<Plug>(neosnippet_expand_or_jump)" :
-            \ pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ? 
-            \ "\<Plug>(neosnippet_expand_or_jump)" :
-            \ "\<TAB>"
+" imap <C-k> <Plug>(neosnippet_expand_or_jump)
+" smap <C-k> <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k> <Plug>(neosnippet_expand_target)
+"
+" imap <expr><TAB> neosnippet#expandable_or_jumpable() ? 
+"             \ "\<Plug>(neosnippet_expand_or_jump)" :
+"             \ pumvisible() ? "\<C-n>" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ? 
+"             \ "\<Plug>(neosnippet_expand_or_jump)" :
+"             \ "\<TAB>"
 """ END NeoCompletion """
 
 
