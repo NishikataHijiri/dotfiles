@@ -1,6 +1,6 @@
-# Author:   Nishikata Hijiri
+# Author: alicengh
 # Complement setting
-#
+
 autoload -U compinit promptinit
 compinit
 zstyle ':completion:*:default' menu select=1

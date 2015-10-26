@@ -1,4 +1,5 @@
-# Maintainer: hijiri
+# License: MIT
+# Maintainer: alicengh
 
 export GREP_COLOR='10;37;41'
 
