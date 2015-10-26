@@ -1,5 +1,7 @@
-// Author: hijiri
-// Last Modified: <+DATE+>
+///
+//  Author: alice
+//  Last Modified: <+DATE+>
+///
 
 #include <iostream>
 
