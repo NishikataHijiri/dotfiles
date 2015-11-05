@@ -39,3 +39,6 @@ export EDITOR=vim
 
 # Microsoft aspnet
 export MONO_GAC_PREFIX="/usr/local"
+
+# Apple Swift
+export PATH='/Users/hijiri/.k/runtimes/kre-mono.1.0.0-beta3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/X11/bin:/usr/texbin:/Users/hijiri/.nodebrew/current/bin:/Users/hijiri/.vim/latex:/Users/hijiri/bin:/usr/local/Cellar/go/1.5.1/libexec/bin:/Users/hijiri/.code/go-local/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin'

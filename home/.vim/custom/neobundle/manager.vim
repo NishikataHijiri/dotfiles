@@ -37,12 +37,12 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tyru/caw.vim.git'
-" NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'itchyny/lightline.vim'
 
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'tpope/vim-fugitive'
+" NeoBundle 'Townk/vim-autoclose'
 
 
 NeoBundle 'Shougo/neomru.vim', {
@@ -112,7 +112,6 @@ NeoBundleLazy 'mattn/emmet-vim', {
             \ }}
 
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'open-browser.vim'
 NeoBundle 'mattn/webapi-vim'
@@ -283,44 +282,6 @@ augroup END
 
 
 
-""" QuickRun """
-let s:hooks = neobundle#get_hooks("vim-quickrun")
-function! s:hooks.on_source(bundle)
-    let g:quickrun_config = get(g:, 'quickrun_config', {})
-
-    let g:quickrun_config._ = {
-                \ 'runner' : 'vimproc',
-                \ 'runner/vimproc/updatetime' : 60,
-                \ 'outputter' : 'error',
-                \ 'outputter/error/success' : 'buffer',
-                \ 'outputter/error/error'   : 'quickfix',
-                \ 'outputter/buffer/split'  : ':botright 10sp',
-                \ 'outputter/buffer/close_on_empty' : 1,
-                \}
-
-    let g:quickrun_config.tex = {'command' : 'autolatex'}
-    let g:quickrun_config.python = {'command' : 'python3'}
-
-    let g:quickrun_config['html'] = {
-                \ 'command': 'open',
-                \ 'exec' : '%c %s',
-                \ 'outputter' : 'browser'
-                \ }
-
-    if executable("clang++")
-       let g:syntastic_cpp_compiler = 'clang++'
-       let g:syntastic_cpp_compiler_options = '--std=c++1z --stdlib=libc++'
-    
-       let g:quickrun_config['cpp/clang++1z'] = {
-                \ 'type': 'cpp/clang++',
-                \ 'cmdopt': '--std=c++1z --stdlib=libc++',
-                \}
-    
-       let g:quickrun_config['cpp'] = {'type': 'cpp/clang++1z'}
-    endif
-endfunction
-""" END: QuickRun """
-
 
 
 """ Template """
@@ -455,7 +416,7 @@ inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y> neocomplete#close_popup()
 inoremap <expr><C-e> neocomplete#cancel_popup()
 
-inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
+" inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " Neosnippets config
 " imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -524,3 +485,55 @@ nmap <Leader>T <Plug>TaskList
 " nmap <Leader>C :ClangFormatAutoToggle<CR>
 "
 " """ END: Clang Completion """ 
+
+
+""" QuickRun """
+let s:hooks = neobundle#get_hooks("vim-quickrun")
+function! s:hooks.on_source(bundle)
+    let g:quickrun_config = get(g:, 'quickrun_config', {})
+
+    let g:quickrun_config._ = {
+                \ 'runner' : 'vimproc',
+                \ 'runner/vimproc/updatetime' : 60,
+                \ 'outputter' : 'error',
+                \ 'outputter/error/success' : 'buffer',
+                \ 'outputter/error/error'   : 'quickfix',
+                \ 'outputter/buffer/split'  : ':botright 10sp',
+                \ 'outputter/buffer/close_on_empty' : 1,
+                \}
+
+    let g:quickrun_config.tex = {'command' : 'autolatex'}
+    let g:quickrun_config.python = {'command' : 'python3'}
+
+    let g:quickrun_config['html'] = {
+                \ 'command': 'open',
+                \ 'exec' : '%c %s',
+                \ 'outputter' : 'browser'
+                \ }
+
+    if executable("clang++")
+       let g:syntastic_cpp_compiler = 'clang++'
+       let g:syntastic_cpp_compiler_options = '--std=c++1z --stdlib=libc++'
+    
+       let g:quickrun_config['cpp/clang++1z'] = {
+                \ 'type': 'cpp/clang++',
+                \ 'cmdopt': '--std=c++1z --stdlib=libc++',
+                \}
+    
+       let g:quickrun_config['cpp'] = {'type': 'cpp/clang++1z'}
+    endif
+
+    """ Apple Swift """
+    if has("mac") 
+        NeoBundle 'toyamarinyon/vim-swift'
+
+        let g:quickrun_config['swift'] = {
+            \ 'command': 'swift',
+            \ 'cmdopt': '$OSX_BIN -i',
+            \ 'exec': '%c %o %s',}
+    endif
+
+endfunction
+""" END: QuickRun """
+
+
