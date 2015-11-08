@@ -167,6 +167,9 @@ NeoBundleLazy 'davidhalter/jedi-vim', {
 " NeoBundle 'Rip-Rip/clang_complete'
 " NeoBundle 'kana/vim-operator-user'
 " NeoBundle 'rhysd/vim-clang-format'
+
+" Apple Swift
+NeoBundle 'toyamarinyon/vim-swift'
  
 call neobundle#end()
 
@@ -525,15 +528,12 @@ function! s:hooks.on_source(bundle)
 
     """ Apple Swift """
     if has("mac") 
-        NeoBundle 'toyamarinyon/vim-swift'
-
         let g:quickrun_config['swift'] = {
             \ 'command': 'swift',
-            \ 'cmdopt': '$OSX_BIN -i',
-            \ 'exec': '%c %o %s',}
+            \ 'cmdopt' : '-sdk $OSX_SDK',
+            \ 'exec'   : '%c %o %s',
+            \}
     endif
 
 endfunction
 """ END: QuickRun """
-
-
