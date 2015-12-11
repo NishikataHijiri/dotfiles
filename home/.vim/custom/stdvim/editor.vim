@@ -1,5 +1,5 @@
 " License: MIT 
-" Maintainer: alicengh
+" Maintainer: alice
 
 """ Color setting """
 syntax on

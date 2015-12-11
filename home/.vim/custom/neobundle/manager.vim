@@ -1,6 +1,5 @@
 " License: MIT
-" Maintainer: alicengh
-
+" Maintainer: alice
 
 """ Release autogroup in CustomAutoCmd
 augroup CustomAutoCmd

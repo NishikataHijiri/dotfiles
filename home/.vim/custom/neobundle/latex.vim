@@ -1,5 +1,5 @@
 " License: MIT License
-" Maintainer: alicengh 
+" Maintainer: alice
 
 " filetype plugin on
 
