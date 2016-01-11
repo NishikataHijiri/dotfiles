@@ -99,6 +99,7 @@ alias ....='cd ../../../'
 # Applications
 alias vi='vim -u NONE'
 alias python='python3'
+alias Glan='glances'
 alias g++='g++ --std=c++14'
 alias llvm-g++='llvm-g++ --std=c++14'
 alias clang++='clang++ --std=c++1y --stdlib=libc++'

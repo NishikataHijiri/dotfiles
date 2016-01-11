@@ -45,3 +45,8 @@ export PATH='/Users/hijiri/.k/runtimes/kre-mono.1.0.0-beta3/bin:/usr/local/bin:/
 
 # GNU Tools
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+
+# Rename home folder
+export desktop=~/Desktop
+export documents=~/Documents
+export downloads=~/Downloads
