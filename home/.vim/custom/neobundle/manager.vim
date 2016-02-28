@@ -56,13 +56,13 @@ NeoBundle 'Shougo/vimproc', {
 
 """ NeoCompletion """
 if has('lua') 
-    NeoBundle 'Shougo/neco-syntax'
+    " NeoBundle 'Shougo/neco-syntax'
     " NeoBundle 'Shougo/neosnippet-snippets'
    
-    NeoBundleLazy 'Shougo/neocomplete.vim', {
-                \ 'depends' : 'Shougo/vimproc',
-                \ 'autoload' : { 'insert' : 1, }
-                \ }
+    " NeoBundleLazy 'Shougo/neocomplete.vim', {
+    "             \ 'depends' : 'Shougo/vimproc',
+    "             \ 'autoload' : { 'insert' : 1, }
+    "             \ }
 
     " NeoBundleLazy 'Shougo/neosnippet', {
     "             \ 'depends' : 'Shougo/neosnippet-snippets',
@@ -181,35 +181,35 @@ NeoBundleCheck
 
 """ NeoCompletion """
 " Basic config.
-let s:hooks = neobundle#get_hooks("neocomplete.vim")
-function! s:hooks.on_source(bundle)
-    let g:acp_enableAtStartup                           = 0
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#enable_at_startup                 = 1
-    let g:neocomplete#auto_completion_start_length      = 3
-
-    let g:neocomplete#enable_ignore_case                = 1
-    let g:neocomplete#enable_smart_case                 = 1
-    let g:neocomplete#enable_camel_case                 = 1
-    let g:neocomplete#enable_auto_select                = 0
-
-    let g:neocomplete#use_vimproc                       = 1
-    let g:neocomplete#sources#buffer#cache_limit_size   = 1000000
-    let g:neocomplete#sources#tags#cache_limit_size     = 30000000
-    let g:neocomplete#enable_fuzzy_completion           = 1
-    let g:neocomplete#lock_buffer_name_pattern          = '\*ku\*'
-
-    let g:neocomplete#sources#dictionary#dictionaries = {
-                    \ 'default': '',
-                    \ 'vimshell': $HOME.'/.vimshell_hist',
-                    \ 'scheme'  : $HOME.'/.gosh_completions'
-                    \}
-
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-endfunction
+" let s:hooks = neobundle#get_hooks("neocomplete.vim")
+" function! s:hooks.on_source(bundle)
+"     let g:acp_enableAtStartup                           = 0
+"     let g:neocomplete#sources#syntax#min_keyword_length = 3
+"     let g:neocomplete#enable_at_startup                 = 1
+"     let g:neocomplete#auto_completion_start_length      = 3
+"
+"     let g:neocomplete#enable_ignore_case                = 1
+"     let g:neocomplete#enable_smart_case                 = 1
+"     let g:neocomplete#enable_camel_case                 = 1
+"     let g:neocomplete#enable_auto_select                = 0
+"
+"     let g:neocomplete#use_vimproc                       = 1
+"     let g:neocomplete#sources#buffer#cache_limit_size   = 1000000
+"     let g:neocomplete#sources#tags#cache_limit_size     = 30000000
+"     let g:neocomplete#enable_fuzzy_completion           = 1
+"     let g:neocomplete#lock_buffer_name_pattern          = '\*ku\*'
+"
+"     let g:neocomplete#sources#dictionary#dictionaries = {
+"                     \ 'default': '',
+"                     \ 'vimshell': $HOME.'/.vimshell_hist',
+"                     \ 'scheme'  : $HOME.'/.gosh_completions'
+"                     \}
+"
+"     if !exists('g:neocomplete#keyword_patterns')
+"         let g:neocomplete#keyword_patterns = {}
+"     endif
+"     let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+" endfunction
  
 
 " Enable omni completion.
@@ -217,15 +217,15 @@ autocmd FileType css            setlocal omnifunc = csscomplete#CompleteCSS
 autocmd FileType xml            setlocal omnifunc = xmlcomplete#CompleteTags
 autocmd FileType html,markdown  setlocal omnifunc = htmlcomplete#CompleteTags
 " autocmd FileType python         setlocal omnifunc = pythoncomplete#Complete
-" autocmd FileType javascript     setlocal omnifunc = javascriptcomplete#CompleteJS
+autocmd FileType javascript     setlocal omnifunc = javascriptcomplete#CompleteJS
 
 " Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
-
-let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+" if !exists('g:neocomplete#sources#omni#input_patterns')
+"   let g:neocomplete#sources#omni#input_patterns = {}
+" endif
+"
+"
+" let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 " let g:neocomplete#sources#omni#input_patterns.c   = '[^.[:digit:] *\t]\%(\.\|->\)'
 " let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::' 
 
@@ -307,16 +307,17 @@ function! s:hooks.on_source(bundle)
     let g:jedi#auto_vim_configuration =  0
     let g:jedi#rename_command = '<Leader>R'
     let g:jedi#goto_command = '<Leader>G'
-    let g:jedi#completions_enabled=0
+    let g:jedi#completions_enabled = 0
     let g:jedi#popup_on_dot = 1
+    let g:jedi#popup_select_first = 0
     let g:jedi#auto_initialization = 1
     autocmd CustomAutoCmd FileType python setlocal omnifunc=g:jedi#auto_initialization#complete
     autocmd CustomAutoCmd FileType python let b:did_ftplugin = 1
 endfunction
 
-if ! empty(neobundle#get("neocomplete.vim"))
-  autocmd CustomAutoCmd FileType python setlocal completeopt-=preview
-endif
+" if ! empty(neobundle#get("neocomplete.vim"))
+"   autocmd CustomAutoCmd FileType python setlocal completeopt-=preview
+" endif
 """ END: jedi-vim: python support """ 
 
 
@@ -398,25 +399,25 @@ nnoremap <silent> ,vch :<C-u>UniteBuildClearHighlight<CR>
 
  
 """ NeoCompletion """
-inoremap <expr><C-g> neocomplete#undo_completion()
-inoremap <expr><C-l> neocomplete#complete_common_string()
+" inoremap <expr><C-g> neocomplete#undo_completion()
+" inoremap <expr><C-l> neocomplete#complete_common_string()
 
 " Recommented key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function() abort
-  " return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function() abort
+"   " return neocomplete#close_popup() . "\<CR>"
+"   " For no inserting <CR> key.
+"   return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+" endfunction
 
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>" 
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS>  neocomplete#smart_close_popup()."\<C-h>" 
 
-inoremap <expr><C-y> neocomplete#close_popup()
-inoremap <expr><C-e> neocomplete#cancel_popup()
+" inoremap <expr><C-y> neocomplete#close_popup()
+" inoremap <expr><C-e> neocomplete#cancel_popup()
 
 " inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 

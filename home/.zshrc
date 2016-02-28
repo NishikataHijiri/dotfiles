@@ -6,6 +6,7 @@
 ##############################
 # Preferences
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # zsh editor config
 bindkey -v #vim-mode
@@ -146,3 +147,14 @@ esac
 #   Apple Swift Development
 ###
 export OSX_SDK=$(xcrun --show-sdk-path --sdk macosx)
+
+PATH="/Users/hijiri/perl5/bin${PATH+:}${PATH}"; export PATH;
+PERL5LIB="/Users/hijiri/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/hijiri/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/hijiri/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/hijiri/perl5"; export PERL_MM_OPT;
+
+###
+#   Perl Env.
+###
+if which plenv > /dev/null; then eval "$(plenv init - zsh)"; fi
