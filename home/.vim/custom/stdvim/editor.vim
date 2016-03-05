@@ -5,7 +5,7 @@
 syntax on
 set t_Co=256
 colorscheme pablo
- 
+
 
 """ Motion control """
 set shiftround
@@ -24,6 +24,7 @@ set background=dark
 set cursorline
 hi clear CursorLine
 hi CursorLineNr term=bold cterm=NONE ctermfg=120 ctermbg=NONE
+set colorcolumn=80
 
 
 """ Programming support """
@@ -59,7 +60,7 @@ set wildmode=list:full
 set wildignore=*.o,*.obj,*.pyc,*.so,*.dll
 
 set noerrorbells
-set visualbell t_vb=
+" set visualbell t_vb=
 
 
 """ Encoding customize """

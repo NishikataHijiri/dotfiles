@@ -1,0 +1,27 @@
+###
+# Author: Liz
+# Last modified: Jan/5/16
+###
+
+# Encoding
+defencoding utf-8
+
+# Prefix Key
+escape ^Jj
+
+# Delete start up screen
+startup_message off
+
+# Auto detach
+autodetach on
+
+# Logging
+log on
+deflog on
+logfile "/Users/hijiri/.screen/log/screen-%m%d%Y-%n.log"
+
+# My Customize
+bind n screen
+bind k prev
+bind j next
+bind l windowlist
