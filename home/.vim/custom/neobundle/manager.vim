@@ -213,11 +213,11 @@ NeoBundleCheck
  
 
 " Enable omni completion.
-autocmd FileType css            setlocal omnifunc = csscomplete#CompleteCSS
-autocmd FileType xml            setlocal omnifunc = xmlcomplete#CompleteTags
-autocmd FileType html,markdown  setlocal omnifunc = htmlcomplete#CompleteTags
+autocmd FileType css    setlocal omnifunc = csscomplete#CompleteCSS
+autocmd FileType xml    setlocal omnifunc = xmlcomplete#CompleteTags
+autocmd FileType html   setlocal omnifunc = htmlcomplete#CompleteTags
 " autocmd FileType python         setlocal omnifunc = pythoncomplete#Complete
-autocmd FileType javascript     setlocal omnifunc = javascriptcomplete#CompleteJS
+" autocmd FileType javascript     setlocal omnifunc = javascriptcomplete#CompleteJS
 
 " Enable heavy omni completion.
 " if !exists('g:neocomplete#sources#omni#input_patterns')

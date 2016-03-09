@@ -1,0 +1,8 @@
+# Author: Liz
+# Last changed: 03/09/2016
+
+# Basic config
+set editing-mode vi
+
+# Change of mapping key 
+Tab: complete
