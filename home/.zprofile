@@ -13,10 +13,13 @@ function cleanup {
 trap cleanup EXIT
 
 
-# Save login history
-#set +m && $(last -30 > ~/.log/.system_log &) && set -m
-
 ###
 #   Perl Env.
 ###
 if which plenv > /dev/null; then eval "$(plenv init -)"; fi
+
+###
+#   screen -*- virtual terminal manager -*-
+###
+screenlatest='screen-4.3.1'
+${=screenlatest} -d -R -t work

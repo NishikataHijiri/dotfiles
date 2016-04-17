@@ -167,6 +167,13 @@ NeoBundleLazy 'davidhalter/jedi-vim', {
 " NeoBundle 'kana/vim-operator-user'
 " NeoBundle 'rhysd/vim-clang-format'
 
+NeoBundle 'tpope/vim-markdown'
+
+" ----- For Python -----
+NeoBundle 'Flake8-vim'
+NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle 'scrooloose/syntastic'
+
 " Apple Swift
 NeoBundle 'toyamarinyon/vim-swift'
  
@@ -214,8 +221,8 @@ NeoBundleCheck
 
 " Enable omni completion.
 autocmd FileType css    setlocal omnifunc = csscomplete#CompleteCSS
-autocmd FileType xml    setlocal omnifunc = xmlcomplete#CompleteTags
 autocmd FileType html   setlocal omnifunc = htmlcomplete#CompleteTags
+" autocmd FileType xml    setlocal omnifunc = xmlcomplete#CompleteTags
 " autocmd FileType python         setlocal omnifunc = pythoncomplete#Complete
 " autocmd FileType javascript     setlocal omnifunc = javascriptcomplete#CompleteJS
 
@@ -522,6 +529,10 @@ function! s:hooks.on_source(bundle)
                 \ 'type': 'cpp/clang++',
                 \ 'cmdopt': '--std=c++1z --stdlib=libc++',
                 \}
+
+    let g:quickrun_config['markdown'] = {
+                \   'outputter': 'browser'
+                \ }
     
        let g:quickrun_config['cpp'] = {'type': 'cpp/clang++1z'}
     endif
@@ -537,3 +548,12 @@ function! s:hooks.on_source(bundle)
 
 endfunction
 """ END: QuickRun """
+
+
+""" For Python """
+let g:PyFlakeOnWrite = 1
+let g:PyFlakeCheckers = 'pep8'
+let g:PyFlakeDefaultComplexity=10
+
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+""" END: For Python """

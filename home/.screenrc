@@ -1,7 +1,5 @@
-###
 # Author: Liz
-# Last modified: Jan/5/16
-###
+# Last modified: 03/10/2016
 
 # Encoding
 defencoding utf-8
@@ -9,7 +7,8 @@ defencoding utf-8
 # Prefix Key
 escape ^Jj
 
-# Delete start up screen
+# Messages and others
+vbell off
 startup_message off
 
 # Auto detach
@@ -20,8 +19,23 @@ log on
 deflog on
 logfile "/Users/hijiri/.screen/log/screen-%m%d%Y-%n.log"
 
+# History
+defscrollback 10000
+
 # My Customize
 bind n screen
-bind k prev
 bind j next
+bind k prev
 bind l windowlist
+
+bind S eval 'split' focus screen
+bind V eval 'split -v' focus screen
+
+bind R eval collapse
+
+bind < eval bumpleft
+bind > eval bumpright
+
+# Caption and Status Line custom
+caption always "%{= c}%{+s k}%H| %=[%t]"
+hardstatus alwayslastline "%?%F%{= 2m}%{+b w}%:%{= 2m}%{+b w}%?%-w%?%F%{=b cK}%:%{= ck}%?%n %t%{-}%+w %=%{= 2m}%{+b w}[%m/%d/%Y %D %C:%s]"

@@ -1,4 +1,7 @@
-# -*- coding: utf-8 -*-
-# Author: Liz
-# Last Modified: <+DATE+>
-<+CURSOR+>
+# coding: utf-8
+"""Any Title
+
+@author: Liz
+@modified: <+DATE+><+CURSOR+>
+
+"""

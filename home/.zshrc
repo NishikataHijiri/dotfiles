@@ -1,6 +1,6 @@
 ###
-#   Maintainer: alicengh
-#   Last modified: 10-26-15
+#   Maintainer: Liz 
+#   Last modified: 04-18-16
 ###
 
 ##############################
@@ -13,12 +13,16 @@ bindkey -v #vim-mode
 # bindkey -M viins 'jj' vi-cmd-mode
 
 autoload -U compinit promptinit
+promptinit
 
 setopt auto_cd
 setopt auto_pushd
 setopt pushd_ignore_dups
 #setopt extended_glob
 setopt hist_ignore_all_dups
+
+setopt correct
+setopt prompt_subst
 
 
 # This config link online help
@@ -33,10 +37,10 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # My Zshell design
 autoload colors
 colors
-PROMPT="%{${fg[blue]}%}%m: %n%(!.#.%% )%{${reset_color}%}"
-PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
+PROMPT="Liz@%{${fg[blue]}%}%n%(!.#.%%) %{${reset_color}%}"
+PROMPT2="%{${fg[cyan]}%}%_[> %{${reset_color}%}"
 SPROMPT="%{${fg[green]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
-RPROMPT="%{${fg[blue]}%}[%./]%{${reset_color}%}"
+RPROMPT="%{${fg[blue]}%}[%.]%{${reset_color}%}"
 
 # Recompile
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
@@ -141,6 +145,22 @@ case ${OSTYPE} in
     linux*)
         alias ls='ls -F --color=auto'
         ;;
+esac
+
+###
+#   screen -*- virtual terminal manager -*-
+###
+screenlatest='screen-4.3.1'
+alias screen='${=screenlatest} -U'
+
+case "${TERM}" in screen)
+    preexec() {
+        echo -ne "\ek#${1%% *}\e\\"
+    }
+    precmd() {
+        echo -ne "\ek$(basename $(pwd))\e\\"
+    }
+    ;;
 esac
 
 ###
