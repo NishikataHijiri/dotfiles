@@ -2,6 +2,8 @@
 """Any Title
 
 @author: Liz
-@modified: <+DATE+><+CURSOR+>
+@modified: <+DATE+>
 
 """
+
+<+CURSOR+>
